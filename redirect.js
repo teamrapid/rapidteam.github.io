@@ -3,7 +3,7 @@ let list = "W3siZnJvbSI6InRpc2xhYiIsInRvIjoiaHR0cHM6Ly90aXNsYWIub3JnIn1d"; // em
 
 list = JSON.parse(window.atob(list));
 
-const baseurl = "";
+const baseurl = "rapidteam.github.io";
 const from = window.location.pathname
   .toLowerCase()
   .replace(new RegExp(`^/*${baseurl}`), "")
