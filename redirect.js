@@ -3,7 +3,7 @@ let list = "W3siZnJvbSI6ImludHJhbmV0IiwidG8iOiJodHRwczovL2FpcnRhYmxlLmNvbS9hcHAw
 
 list = JSON.parse(window.atob(list));
 
-const baseurl = "";
+const baseurl = "teamrapid.github.io";
 const from = window.location.pathname
   .toLowerCase()
   .replace(new RegExp(`^/*${baseurl}`), "")
@@ -15,3 +15,16 @@ console.info({ from, to });
 
 if (to)
   window.location.href = to;
+console.info({ from, to });
+
+// if no matching destination
+else {
+  // show html error message
+  const message = `
+    No redirect link found for "${from}".<br>
+  `;
+  window.onload = () => { document.body.innerHTML = message };
+
+  // OR, immediately navigate to some fallback url
+  // window.location.href = "some-fallback-url.com/";
+}
